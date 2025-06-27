@@ -7,10 +7,17 @@ public class Contrato {
 	
 	private int id;
 	private String numeroContrato;
-	private String obContrato;
 	private Date dataAssinatura;
 	private BigDecimal valorTotal;
 	private boolean statusAtivo;
+	private String objetoContrato;
+	
+	public String getObjetoContrato() {
+		return objetoContrato;
+	}
+	public void setObjetoContrato(String obContrato) {
+		this.objetoContrato = obContrato;
+	}
 	private Empresa empresa;
 	
 	
@@ -32,12 +39,7 @@ public class Contrato {
 	public void setNumeroContrato(String numeroContrato) {
 		this.numeroContrato = numeroContrato;
 	}
-	public String getObContrato() {
-		return obContrato;
-	}
-	public void setObContrato(String obContrato) {
-		this.obContrato = obContrato;
-	}
+	
 	public Date getDataAssinatura() {
 		return dataAssinatura;
 	}

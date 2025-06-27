@@ -5,18 +5,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<%-- Inclui o cabeçalho padrão com CSS, etc. --%>
+		
 		<%@include file="base-head.jsp"%>
 		<title>Gerenciar Contratos</title>
 	</head>
 	<body>
-		<%-- Inclui o modal de confirmação de exclusão --%>
+		
 		<%@include file="modal.html"%>
-		<%-- Inclui o menu de navegação --%>
+		
 		<%@include file="nav-menu.jsp"%>
 			
 		<div id="container" class="container-fluid">
-			<%-- Bloco para exibir mensagens de sucesso ou erro --%>
+			
 			<div id="alert" style="${not empty message ? 'display: block;' : 'display: none;'}" class="alert alert-dismissable ${alertType eq 1 ? 'alert-success' : 'alert-danger'}">
 			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			  ${message}
@@ -28,19 +28,13 @@
 			    </div>
 			 
 			    <div class="col-md-6">
-			    	<%-- Barra de busca (funcionalidade a ser implementada no futuro) --%>
 			        <div class="input-group h2">
-			            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar contratos">
-			            <span class="input-group-btn">
-			                <button class="btn btn-danger" type="submit">
-			                    <span class="glyphicon glyphicon-search"></span>
-			                </button>
-			            </span>
+			           
+			            
 			        </div>
 			    </div>
 			 
 			    <div class="col-md-3">
-			    	<%-- Botão para adicionar um novo contrato --%>
 			        <a href="${pageContext.request.contextPath}/contrato/form" class="btn btn-danger pull-right h2"><span class="glyphicon glyphicon-plus" /></span>&nbsp;Adicionar Contrato</a>
 			    </div>
 	     	</div>

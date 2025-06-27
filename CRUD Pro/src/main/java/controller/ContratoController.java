@@ -49,20 +49,20 @@ public class ContratoController extends HttpServlet {
 		     RequestDispatcher dispatcher = req.getRequestDispatcher("/form-contrato.jsp");
 		     dispatcher.forward(req, resp);
 		     
-		 } else { // Este bloco agora trata tanto a rota "/" quanto "/contratos"
+		 } else { 
 		     
-		     // A lógica de buscar os dados é a mesma para ambas as rotas
+		     
 		     listarContratos(req);
 		     ControllerUtil.transferSessionMessagesToRequest(req);
 		     
 		     String targetJsp = null;
 		     
-		     // Agora, decidimos para qual página encaminhar
+		    
 		     if (action.equals(contextPath + "/")) {
-		         // Se a URL for a raiz do site, encaminha para o index.jsp
+		         
 		         targetJsp = "/index.jsp";
 		     } else {
-		         // Para qualquer outra rota (como /contratos), encaminha para contratos.jsp
+		        
 		         targetJsp = "/contratos.jsp";
 		     }
 		     
@@ -86,7 +86,7 @@ public class ContratoController extends HttpServlet {
 	        deletarContrato(req);
 	    }
 	    
-	    // Redireciona para a página de listagem principal após qualquer ação de POST
+	   
 	    ControllerUtil.redirect(resp, contextPath + "/contratos");
 	}
 	
@@ -143,7 +143,7 @@ public class ContratoController extends HttpServlet {
 
 	        Contrato contrato = new Contrato();
 	        contrato.setNumeroContrato(numeroContrato);
-	        contrato.setObContrato(objetoContrato);
+	        contrato.setObjetoContrato(objetoContrato);
 	        contrato.setDataAssinatura(sqlDate);
 	        contrato.setValorTotal(valorTotal);
 	        contrato.setStatusAtivo(statusAtivo);
@@ -164,7 +164,7 @@ public class ContratoController extends HttpServlet {
 	    try {
             int id = Integer.parseInt(req.getParameter("id"));
             String numeroContrato = req.getParameter("numeroContrato");
-            String objetoContrato = req.getParameter("objetoContrato");
+            String obContrato = req.getParameter("obContrato");
             String dataAssinaturaStr = req.getParameter("dataAssinatura");
             String valorTotalStr = req.getParameter("valorTotal");
             String empresaIdStr = req.getParameter("empresaId");
@@ -182,7 +182,7 @@ public class ContratoController extends HttpServlet {
 	        Contrato contrato = dao.findById(id); 
 	        
 	        contrato.setNumeroContrato(numeroContrato);
-	        contrato.setObContrato(objetoContrato);
+	        contrato.setObjetoContrato(obContrato);
 	        contrato.setDataAssinatura(sqlDate);
 	        contrato.setValorTotal(valorTotal);
 	        contrato.setStatusAtivo(statusAtivo);

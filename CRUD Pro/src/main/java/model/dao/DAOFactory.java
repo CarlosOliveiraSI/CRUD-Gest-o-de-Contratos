@@ -14,6 +14,7 @@ public class DAOFactory {
 		
 		listDAOsInterfaces.put(ContratoDAO.class, new MysqlContratoDAO());
 		listDAOsInterfaces.put(EmpresaDAO.class, new MysqlEmpresaDAO());
+		listDAOsInterfaces.put(UsuarioDAO.class, new MysqlUsuarioDAO());
 	}
 
 	@SuppressWarnings("unchecked")

@@ -21,7 +21,7 @@ public class MysqlContratoDAO implements ContratoDAO {
 			 PreparedStatement pstm = conn.prepareStatement(sql)) {
 			
 			pstm.setString(1, contrato.getNumeroContrato());
-			pstm.setString(2, contrato.getObContrato());
+			pstm.setString(2, contrato.getObjetoContrato());
 			pstm.setDate(3, new java.sql.Date(contrato.getDataAssinatura().getTime()));
 			pstm.setBigDecimal(4, contrato.getValorTotal());
 			pstm.setBoolean(5, contrato.isStatusAtivo());
@@ -42,7 +42,7 @@ public class MysqlContratoDAO implements ContratoDAO {
 			 PreparedStatement pstm = conn.prepareStatement(sql)) {
 			
 			pstm.setString(1, contrato.getNumeroContrato());
-			pstm.setString(2, contrato.getObContrato());
+			pstm.setString(2, contrato.getObjetoContrato());
 			pstm.setDate(3, new java.sql.Date(contrato.getDataAssinatura().getTime()));
 			pstm.setBigDecimal(4, contrato.getValorTotal());
 			pstm.setBoolean(5, contrato.isStatusAtivo());
@@ -92,7 +92,7 @@ public class MysqlContratoDAO implements ContratoDAO {
 					contrato = new Contrato();
 					contrato.setId(rset.getInt("id"));
 					contrato.setNumeroContrato(rset.getString("numero_contrato"));
-					contrato.setObContrato(rset.getString("objeto_contrato"));
+					contrato.setObjetoContrato(rset.getString("objeto_contrato"));
 					contrato.setDataAssinatura(rset.getDate("data_assinatura"));
 					contrato.setValorTotal(rset.getBigDecimal("valor_total"));
 					contrato.setStatusAtivo(rset.getBoolean("status_ativo"));
@@ -125,7 +125,7 @@ public class MysqlContratoDAO implements ContratoDAO {
 				Contrato contrato = new Contrato();
 				contrato.setId(rset.getInt("id"));
 				contrato.setNumeroContrato(rset.getString("numero_contrato"));
-				contrato.setObContrato(rset.getString("objeto_contrato"));
+				contrato.setObjetoContrato(rset.getString("objeto_contrato"));
 				contrato.setDataAssinatura(rset.getDate("data_assinatura"));
 				contrato.setValorTotal(rset.getBigDecimal("valor_total"));
 				contrato.setStatusAtivo(rset.getBoolean("status_ativo"));

@@ -24,12 +24,8 @@
 			 
 			    <div class="col-md-6">
 			        <div class="input-group h2">
-			            <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar empresas">
-			            <span class="input-group-btn">
-			                <button class="btn btn-danger" type="submit">
-			                    <span class="glyphicon glyphicon-search"></span>
-			                </button>
-			            </span>
+			           
+			            
 			        </div>
 			    </div>
 			 
@@ -45,22 +41,22 @@
 			        <table class="table table-striped table-hover" cellspacing="0" cellpadding="0">
 			            <thead>
 			                <tr>
-			                    <%-- Cabeçalhos CORRETOS para a nova tabela --%>
+			                   
 			                    <th>Razão Social</th>
 			                    <th>CNPJ</th>
 			                    <th class="actions">Ações</th>
 			                 </tr>
 			            </thead>
 			            <tbody>
-			            	<%-- Lendo a lista CORRETA ("listaDeEmpresas") --%>
+			            	
 			            	<c:forEach var="empresa" items="${listaDeEmpresas}">
 								<tr>
-									<%-- Exibindo os campos CORRETOS (razaoSocial e cnpj) --%>
+									
 				                    <td>${empresa.razaoSocial}</td>
 				                    <td>${empresa.cnpj}</td>
 				                    
 				                    <td class="actions">
-				                    	<%-- Links CORRETOS para as rotas de /empresa/* --%>
+				                    	
 				                        <a class="btn btn-info btn-xs" 
 				                           href="${pageContext.request.contextPath}/empresa/update?id=${empresa.id}" >
 				                           <span class="glyphicon glyphicon-edit"></span>
